@@ -43,13 +43,6 @@ module.exports = {
           'html-loader'
         ]
       },
-
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'json', //asset/resource
-        //configuration.module.rules[2].type should be one of these:
-        //"javascript/auto" | "javascript/dynamic" | "javascript/esm" | "json" | "webassembly/experimental"
-      },
       
       {
         test: /\.css$/,
