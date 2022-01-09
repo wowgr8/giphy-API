@@ -1,16 +1,21 @@
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Weather</title>
+  <title>Giphy API</title>
 </head>
 <body>
   <div class="container">
-    <h1>Get Weather Conditions From Anywhere!</h1>
-    <label for="location">Enter a location:</label>
-    <input id="location" type="text">
-    <button class="btn-success" id="weatherLocation">Get Current Temperature and Humidity</button>
-    <div class="showErrors"></div>
-    <div class="showHumidity"></div>
-    <div class="showTemp"></div>
+    <h1>Search for GIFs using GIHPY</h1>
+    <label for="search">Enter a search term</label>
+    <input id="search" type="text">
+    <button class="btn-success" id="gifSearch">Search for GIF</button>
+    <br>
+    <br>
+    <div class="showGif"></div>
+    <div class="showimage">
+      <img id="imageToShow">
+      <!-- <img src="https://media1.giphy.com/media/iDJQRjTCenF7A4BRyU/giphy.gif?cid=790b7611702690f677f7d2de106c3c8113f25571a73cbf67&rid=giphy.gif&ct=g" alt="gif"> -->
+    </div>
   </div>
 </body>
 </html>
