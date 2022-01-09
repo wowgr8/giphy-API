@@ -2,26 +2,21 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import WeatherService from './js/weather-service.js'
+import GiphySearch from './js/giphy-search.js';
 
-function clearFields() {
-  $('#location').val("");
-  $('.showErrors').text("");
-  $('.showHumidity').text("");
-  $('.showTemp').text("");
+
+function clearFields(){
+  $('#search').val("");
+  $('#imageToShow').attr("");
 }
 
-$(document).ready(function() {
-  $('#weatherLocation').click(function() {
-    let search = $('#location').val();
-    clearFields();
-    let promise = WeatherService.getWeather(search);
-    promise.then(function(response) {
-      const body = JSON.parse(response);
-      $('.showHumidity').text(`The humidity in ${search} is ${body.main.humidity}%`);
-      $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
-    }, function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error}`);
-    });
+$('#gifSearch').click(function() {
+  let search = $('#search').val();
+  clearFields();
+  let promise = GiphySearch.getSearch(search);
+  promise.then(function(response){
+    const body = JSON.parse(response);
+    let originalGif = body.data[0].images.original.url;
+    $('#imageToShow').attr("src", originalGif);
   });
 });
